@@ -6,7 +6,7 @@
         <a>Hi {{ request.user }}</a>
         <a class="btn btn-danger" href="{% url 'logout' %}">logout</a>
         {% else %}
-        <a class="btn btn-primary" href="{% url 'admin:index' %}">Sign In</a>
+        <a class="btn btn-primary" href="{% url 'admin:index' %}">Admin Panel</a>
         <a class="btn btn-primary" href="{% url 'accounts' %}">Sign In</a>
         {% endif %}
 
