@@ -25,7 +25,7 @@ SECRET_KEY = "%vv@kctey-pjo&%4lkt&etg6633aa!pnr=g9i97!&u*1ci_mx+"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["omega.pythonanywhere.com"]
 
 
 # Application definition
