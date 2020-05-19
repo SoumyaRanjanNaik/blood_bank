@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">Bloodbank</a>
+
+        {% if request.user.is_authenticated %}
+        <a>Hi {{ request.user }}</a>
+        <a class="btn btn-danger" href="{% url 'logout' %}">logout</a>
+        {% else %}
+        <a class="btn btn-primary" href="{% url 'admin:index' %}">Sign In</a>
+        <a class="btn btn-primary" href="{% url 'accounts' %}">Sign In</a>
+        {% endif %}
+
+    </div>
+</nav>

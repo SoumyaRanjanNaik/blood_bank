@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block js %}
+{% if msg %}
+<span id='msg' hidden>{{ msg }}</span>
+<span id="redirect">{% url 'dashboard' %}</span>
+<script>
+    alert(document.getElementById('msg').innerHTML)
+    window.location.href = document.getElementById('redirect').innerHTML;
+</script>
+{% endif %}
+
+{% endblock js %}

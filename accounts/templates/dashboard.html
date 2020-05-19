@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+<link href="{% static 'css/landing-page.min.css' %}" rel="stylesheet">
+{% endblock css %}
+
+
+{% block content %}
+{% include "includes/navbar.html" %}
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <ul class="list-group">
+                {% for d in don %}
+                <li class="list-group-item">{{ d.type_required }} {{ d.location }}
+                    <span class="float-right">
+                        <form action="{% url 'donate' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="d_id" value="{{ d.id }}">
+                            <input type="submit" class="btn btn-sm btn-primary" value="Donate">
+                        </form>
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
